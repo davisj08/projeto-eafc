@@ -53,3 +53,17 @@
         max-width: 80%;
     }
 }
+@media (max-width: 425px) {
+    .video-container {
+        height: 100vh; /* isso fará com que cada contêiner de vídeo ocupe toda a altura da tela */
+    }
+    .video-container video {
+        width: 100%; /* isso fará com que o vídeo ocupe toda a largura do contêiner */
+        height: 50vh; /* isso fará com que o vídeo ocupe metade da altura do contêiner */
+        object-fit: cover; /* isso irá garantir que o vídeo cubra todo o espaço disponível sem distorção */
+    }
+    .video-container .texto {
+        height: 50vh; /* isso fará com que o texto ocupe a outra metade da altura do contêiner */
+        overflow: auto; /* isso adicionará uma barra de rolagem se o texto for muito longo */
+    }
+}
