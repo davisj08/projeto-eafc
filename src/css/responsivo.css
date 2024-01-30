@@ -53,17 +53,32 @@
         max-width: 80%;
     }
 }
-@media (max-width: 425px) {
+/* Para dispositivos móveis */
+@media (max-width: 768px) {
     .video-container {
-        height: 100vh; /* isso fará com que cada contêiner de vídeo ocupe toda a altura da tela */
+        width: 100%;
+        margin-bottom: 20px; /* Espaçamento entre os vídeos */
     }
-    .video-container video {
-        width: 100%; /* isso fará com que o vídeo ocupe toda a largura do contêiner */
-        height: 50vh; /* isso fará com que o vídeo ocupe metade da altura do contêiner */
-        object-fit: cover; /* isso irá garantir que o vídeo cubra todo o espaço disponível sem distorção */
-    }
-    .video-container .texto {
-        height: 50vh; /* isso fará com que o texto ocupe a outra metade da altura do contêiner */
-        overflow: auto; /* isso adicionará uma barra de rolagem se o texto for muito longo */
+
+    .video {
+        width: 100%;
     }
 }
+
+/* Para dispositivos maiores (como em um PC) */
+@media (min-width: 769px) {
+    .video-container {
+        width: calc(33.33% - 20px); /* Divide a largura em 3 colunas, com um espaçamento de 20px entre elas */
+        margin-right: 20px;
+        float: left; /* Faz com que os vídeos fiquem lado a lado */
+    }
+
+    .video {
+        width: 100%;
+    }
+
+    .texto {
+        margin-top: 10px; /* Adiciona um pequeno espaço entre o vídeo e o texto */
+    }
+}
+
