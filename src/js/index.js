@@ -4,13 +4,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     botoes.forEach(function(botao) {
         botao.addEventListener("click", () => {
-            console.log("Botão clicado"); /
-            botao.querySelector(".plataformas").classList.toggle("ativo");
+            console.log("Botão clicado"); // Verifique se o botão está sendo clicado
+            const plataformas = botao.querySelector(".plataformas");
+            if (plataformas) {
+                plataformas.classList.add("ativo");
+            }
         });
 
         const handleImageClick = (link) => {
             console.log("Link clicado:", link); // Verifique se o link está sendo capturado corretamente
-            window.open(link, "_blank"); 
+            window.open(link, "_blank"); // Verifique se o redirecionamento do link está funcionando
         };
 
         botao.querySelectorAll('img').forEach(function(img) {
